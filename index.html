@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Sebastian Brummer Portfolio Website</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +13,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <nav>
+        <!--Navigation bar-->
+        <nav class="navigation">
             <ul class="navigation">
-                <li class="link"></li>
+                <li class="link"><img src="logo.png" alt="logo" class="logo"></li>
                 <li class="link mode-toggle">Light</li>
                 <li class="link">Home</li>
                 <li class="link">About</li>
@@ -23,8 +24,9 @@
                 <li class="link">Contact</li>
             </ul>
         </nav>
-        <section>
-            <img src="sebastian-brummer-professional.jpg" alt=" Brummer class" class="profile-image" id="profile-image">
+        <!--Hero section-->
+        <section class="hero">
+            <img src="sebastian-brummer-professional.jpg" alt=" Brummer class" class="profile-image animate-appear" id="profile-image">
 
             <div class="intro-container">
                 <h1 class="intro">
@@ -36,7 +38,19 @@
             </div>
             <div class="recruit-buttons">
             <button class="hire-me-button">Hire me</button>
-            <button href="CV.pdf" download class="download-cv-button">Download CV</button>
+            <a href="CV.pdf" download class="download-cv-button">Download CV</a>
+            </div>
+        </section>
+        
+        <section class="about">
+            <div class="about-me-container animate-appear">         
+                <h2 class="about-me-title">About Me</h2>
+                <div class="about-me-content">
+                    <img src="sebastian-brummer-professionals-second.jpg" alt="Sebastian Brummer" class="about-me-image">
+                    <p class="about-me-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ipsa magnam sint iure molestias voluptatibus unde explicabo maiores voluptatem minima, vero doloremque ipsam, beatae cupiditate saepe magni ut a repudiandae, earum esse commodi enim illum assumenda! Reprehenderit natus sit repellat? Voluptate quo ea et iste adipisci harum. Sapiente, aut ea modi delectus aspernatur debitis ex neque vero! Quis odio aspernatur suscipit, tempore qui provident quas reprehenderit ab aut architecto libero, voluptate iusto distinctio? Eaque, quasi. Architecto, nostrum! Dignissimos deserunt in blanditiis, nemo quam, aspernatur provident excepturi, autem maiores tempora explicabo aut. Quasi magni debitis repudiandae nam recusandae nemo quas laborum!
+                    </p>
+                </div>
             </div>
         </section>
         <script src="script.js"></script>

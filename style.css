@@ -16,18 +16,23 @@
     transition: all 0.2s ease-in-out;
 }
 
+/*Sets background color*/
 body{
     background-color: var(--clr-background);
+    overflow-x: hidden;
 }
 
 /* Navigation styles */
 .navigation{
     width: 100%;
     height: 10vh;
+    position: sticky;
+    top:0;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     background-color: var(--clr-primary);
+    z-index: 1000;
 }
 
 /* Navigation links style*/
@@ -47,48 +52,66 @@ body{
 
 /*logo style*/
 .link:nth-child(1){
-    background-image: url(logo.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
     margin-right: auto;
+    height: 100%;
+}
+
+.logo{
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
     height: 90%;
+}
+
+.link:not(:first-child)
+
+.link:not(:first-child){
+    cursor: pointer;
 }
 
 /* Navigation links hover effect */
 .link:not(:first-child):hover{
     background-color: var(--clr-secondary);
-    color: var(--clr-accent)
+    color: var(--clr-accent);
+    cursor: pointer;
 }
 
+.hero{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: block;
+}
+
+/* Profile image styles*/
 .profile-image{
-    width: 20vw;
-    position: fixed;
+    width: 20%;
+    position: absolute;
     top: 30%;
     background-size: cover;
     background-position: center;
-    margin-left: 60vw;
-    border-radius: 10px;
+    margin-left: 60%;
+    border-radius: 20px;
+    border: 5px solid var(--clr-accent);
     box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
-    animation: appear 1s ease-in-out forwards;
 }
 
 /*Hero introduction styles*/
 .intro-container{
     width: 40vw;
     height: 55svh;
-    position: fixed;
+    position: relative;
     margin-left: 10vw;
-    top:30%;
+    top:60%;
     transform: translateY(-50%);
     z-index: -1;
     border-radius:15px;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-    animation: appear 1s ease-in-out forwards;
 }
 
+/*Hero section title font styles*/
 .intro{
-    font-size: clamp(1rem, 4rem, 5rem);
+    font-size: clamp(0.5rem, 4rem, 5rem);
     font-family: var(--font-heading);
     color: var(--clr-secondary);
     width: 100%;
@@ -99,15 +122,17 @@ body{
     color: var(--clr-accent);
 }
 
+/* Hero section paragraph font styles*/
 .intro-description{
     font-size: 2rem;
     font-family: var(--font-body);
     color: var(--clr-secondary);
     height: 40%;
     width: 100%;
-    position: absolute; 
+    position: relative; 
 }
 
+/* Styles buttons recruiters might be intrested in */
 .recruit-buttons{
     width: 100vw;
     height: 20vh;
@@ -119,6 +144,7 @@ body{
     align-items: center;
 }
 
+/* Styles the   button that downloads my CV*/
 .download-cv-button{
     width: 15vw;
     height: 8vh;
@@ -126,16 +152,23 @@ body{
     color: var(--clr-secondary);
     font-family: var(--font-body);
     font-size: 2rem;
+    font-weight: bold;
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
 }
 
+/*Styles the button that download my CV when it is hovered*/
 .download-cv-button:hover{
     background-color: var(--clr-secondary);
     color: var(--clr-accent);
 }
+
+/*Styles the button that takes the user to the contact form*/
 .hire-me-button{
     width: 15vw;
     height: 8vh;
@@ -146,35 +179,91 @@ body{
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    font-weight: bold;
 }
-
+/* Styles the button that takes the user to the contact form when hovered*/
 .hire-me-button:hover{
     background-color: var(--clr-secondary);
     color: var(--clr-accent);
 }
-@property --a{
-    syntax: "<angle>";
-    inherits: false;
-    initial-value: 0deg;
+
+.about{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
- @keyframes rotating{
-        0%{
-            --a: 0%;
-        }
-        0%{
-            --a: 360deg;
-        }
-    }
+.about-me-container{
+    width: 60%;
+    height: 85vh;
+    border-radius: 15px;
+    border: 5px solid var(--clr-accent);
+    background-color: var(--clr-primary);
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 2%;
+}
 
+.about-me-title{
+    font-family: var(--font-heading), sans-serif;
+    font-size: 3rem;
+    color: var(--clr-secondary);
+    position: relative;
+    text-align: center;
+    height: 20%;
+    margin-top: 4%;
+}
+
+.about-me-content{
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;    
+    position: relative;
+    padding: 2%
+}
+
+.about-me-image{
+    width: 45%;
+    height: 95%;
+    display: inline-block;
+    position: relative;
+    object-fit: cover;
+    border-radius: 30px;
+    border: 5px solid var(--clr-accent);
+    box-shadow: 3px 3px 10px var(--clr-secondary), -3px -3px 10px var(--clr-secondary);
+}
+
+.about-me-text{
+    width: 50%;
+    font-family: var(--font-body),sans-sarif;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--clr-secondary);
+    padding: 2%;
+    position: relative;
+    display: inline-block;
+}
+
+.animate-appear{
+    animation: appear 1s ease-in-out forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+
+/* Animates element when they appear on the screen*/
 @keyframes appear {
     0%{
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(30px) scale(0.4);
     }
     100%{
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
     
 }
